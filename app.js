@@ -3,14 +3,14 @@ const links = [
   {
     title: "かなのプロフィールを見る",
     eyebrow: "PROFILE",
-    url: "https://mfco.link/r/Yi56wEEzbCgwXtpTesKP9Cso&openExternalBrowser=1",
+    url: "https://mfco.link/r/Yi56wEEzbCgwXtpTesKP9Cso",
     icon: "heart",
     external: true,
   },
   {
     title: "もっと近くで話してみる",
     eyebrow: "SPECIAL LINK",
-    url: "https://mfco.link/r/Yi56wEEzbCgwXtpTesKP9Cso&openExternalBrowser=1",
+    url: "https://mfco.link/r/Yi56wEEzbCgwXtpTesKP9Cso",
     icon: "heart",
     external: true,
   },
