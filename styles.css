@@ -12,6 +12,8 @@ body {
   min-height: 100vh;
   margin: 0;
   background:
+    radial-gradient(ellipse at 14% -4%, rgba(255, 250, 246, 0.58) 0%, rgba(255, 245, 240, 0.16) 23%, transparent 44%),
+    radial-gradient(ellipse at 102% 56%, rgba(255, 248, 242, 0.22) 0%, transparent 34%),
     radial-gradient(circle at 84% 4%, rgba(176, 38, 68, 0.32), transparent 23rem),
     radial-gradient(circle at 8% 72%, rgba(111, 21, 43, 0.3), transparent 26rem),
     linear-gradient(180deg, #210b12 0%, #12070a 100%);
@@ -21,7 +23,9 @@ body::before {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(118deg, transparent 23%, rgba(255, 218, 196, 0.035) 46%, transparent 67%);
+  background:
+    linear-gradient(118deg, transparent 17%, rgba(255, 250, 246, 0.11) 35%, rgba(255, 218, 196, 0.025) 50%, transparent 68%),
+    radial-gradient(ellipse at 12% 92%, rgba(255, 250, 246, 0.14), transparent 28%);
   content: "";
 }
 
@@ -38,6 +42,8 @@ button { font: inherit; }
   padding: 24px;
   overflow: hidden;
   background:
+    radial-gradient(circle at 12% 88%, rgba(255, 250, 246, 0.23), transparent 20rem),
+    radial-gradient(circle at 6% 4%, rgba(255, 249, 245, 0.16), transparent 15rem),
     radial-gradient(circle at 78% 12%, rgba(151, 26, 54, 0.55), transparent 24rem),
     linear-gradient(145deg, #13070a 0%, #310d17 54%, #17080c 100%);
   transition: opacity 260ms ease, visibility 260ms ease;
