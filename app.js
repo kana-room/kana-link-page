@@ -1,25 +1,60 @@
-// URLはここだけ差し替えれば、各画像リンクに反映されます。
-const links = [
-  {
-    title: "かなのプロフィールを見る",
-    eyebrow: "PROFILE",
-    url: "https://mfco.link/r/Yi56wEEzbCgwXtpTesKP9Cso",
-    icon: "heart",
-    external: true,
-  },
-  {
-    title: "もっと近くで話してみる",
-    eyebrow: "SPECIAL LINK",
-    url: "https://mfco.link/r/Yi56wEEzbCgwXtpTesKP9Cso",
-    icon: "heart",
-    external: true,
-  },
-];
+// アカウントごとの内容は、この設定だけを変更します。
+// Instagramには「公開URL/?account=アカウント名」を登録してください。
+// imageには、同じサイトへアップロードした画像の相対パスを指定できます。
+const pages = {
+  kana: {
+    pageTitle: "かな｜お知らせ",
+    middleText: `ここに、あなたの想いやお知らせなどの長い文章を入れられます。
 
-// 2枚の画像の間に表示する文章です。改行もそのまま表示されます。
-const middleText = `ここに、あなたの想いやお知らせなどの長い文章を入れられます。
+たとえば、初めて来てくれた方へのメッセージや、プロフィールだけでは伝えきれないことを自由に書いてください。ゆっくり読んで、気になったら上下の画像をタップしてね。`,
+    links: [
+      {
+        title: "かなのプロフィールを見る",
+        eyebrow: "PROFILE",
+        url: "https://mfco.link/r/Yi56wEEzbCgwXtpTesKP9Cso",
+        image: "",
+        imageLabel: "IMAGE",
+        external: true,
+      },
+      {
+        title: "もっと近くで話してみる",
+        eyebrow: "SPECIAL LINK",
+        url: "https://mfco.link/r/Yi56wEEzbCgwXtpTesKP9Cso",
+        image: "",
+        imageLabel: "IMAGE",
+        external: true,
+      },
+    ],
+  },
+  account2: {
+    pageTitle: "サンプルアカウント｜お知らせ",
+    middleText: `ここは2つ目のアカウント専用の文章です。
 
-たとえば、初めて来てくれた方へのメッセージや、プロフィールだけでは伝えきれないことを自由に書いてください。ゆっくり読んで、気になったら上下の画像をタップしてね。`;
+アカウントごとに、この長文・上下の画像・タイトル・リンク先を別々に設定できます。`,
+    links: [
+      {
+        title: "上の画像リンク",
+        eyebrow: "PROFILE",
+        url: "https://mfco.link/r/Yi56wEEzbCgwXtpTesKP9Cso",
+        image: "",
+        imageLabel: "IMAGE",
+        external: true,
+      },
+      {
+        title: "下の画像リンク",
+        eyebrow: "SPECIAL LINK",
+        url: "https://mfco.link/r/Yi56wEEzbCgwXtpTesKP9Cso",
+        image: "",
+        imageLabel: "IMAGE",
+        external: true,
+      },
+    ],
+  },
+};
+
+const requestedAccount = new URLSearchParams(window.location.search).get("account") || "kana";
+const page = pages[requestedAccount] || pages.kana;
+const links = page.links;
 
 const ua = navigator.userAgent || "";
 const isInstagram = /Instagram/i.test(ua);
@@ -51,6 +86,9 @@ function renderLinks() {
   links.forEach((item, index) => {
     const fragment = template.content.cloneNode(true);
     const link = fragment.querySelector(".media-link");
+    const art = fragment.querySelector(".media-link__art");
+    const photo = fragment.querySelector(".media-link__photo");
+    const imageLabel = fragment.querySelector(".media-link__image-label");
     const eyebrow = fragment.querySelector(".media-link__caption-eyebrow");
     const title = fragment.querySelector(".media-link__title");
     const fallbackLink = fragment.querySelector(".plain-fallback-link");
@@ -59,6 +97,13 @@ function renderLinks() {
     link.setAttribute("aria-label", `${item.title}を外部ブラウザで開く`);
     eyebrow.textContent = item.eyebrow;
     title.textContent = item.title;
+    imageLabel.textContent = item.imageLabel || "IMAGE";
+
+    if (item.image) {
+      photo.src = item.image;
+      photo.hidden = false;
+      art.classList.add("has-image");
+    }
     // 画像リンクは外部ブラウザ用。下側だけ予備テキストで最終URLを直接開く。
     if (index === 0) {
       fallbackLink.remove();
@@ -92,6 +137,7 @@ function setupAgeGate() {
   });
 }
 
+document.title = page.pageTitle;
 renderLinks();
-document.querySelector("#middle-text").textContent = middleText;
+document.querySelector("#middle-text").textContent = page.middleText;
 setupAgeGate();
