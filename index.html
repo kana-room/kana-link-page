@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#d93650" />
+    <title>かな｜お知らせ</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <section id="age-gate" class="age-gate" aria-labelledby="age-title">
+      <div class="age-gate__glow age-gate__glow--one" aria-hidden="true"></div>
+      <div class="age-gate__glow age-gate__glow--two" aria-hidden="true"></div>
+      <div class="age-card">
+        <div class="age-card__mark" aria-hidden="true">♥</div>
+        <p class="age-card__eyebrow">AGE CONFIRMATION</p>
+        <h1 id="age-title">18歳以上ですか？</h1>
+        <p class="age-card__copy">この先のページは、18歳以上の方を対象としています。</p>
+        <div class="age-card__actions">
+          <button id="confirm-age" class="button button--primary" type="button">はい、18歳以上です</button>
+          <button id="decline-age" class="button button--text" type="button">いいえ</button>
+        </div>
+        <p id="age-message" class="age-card__message" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <main id="main-content" class="page-shell" hidden aria-hidden="true">
+      <div id="top-media-link" class="media-links" aria-label="上のご案内リンク"></div>
+
+      <section class="long-text" aria-label="メッセージ">
+        <p id="middle-text"></p>
+      </section>
+
+      <div id="bottom-media-link" class="media-links" aria-label="下のご案内リンク"></div>
+    </main>
+
+    <template id="media-link-template">
+      <article class="media-item">
+        <a class="media-link" target="_self">
+          <div class="media-link__art" aria-hidden="true">
+            <span class="media-link__sparkle media-link__sparkle--one">✦</span>
+            <span class="media-link__sparkle media-link__sparkle--two">✦</span>
+            <span class="media-link__heart">♥</span>
+            <span class="media-link__image-label">IMAGE</span>
+          </div>
+          <span class="media-link__overlay"></span>
+          <span class="media-link__caption">
+            <span class="media-link__caption-eyebrow"></span>
+            <span class="media-link__title"></span>
+            <span class="media-link__cta">タップして開く <span aria-hidden="true">→</span></span>
+          </span>
+        </a>
+        <a class="plain-fallback-link">開かない場合はコチラ👈</a>
+      </article>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
