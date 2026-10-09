@@ -27,24 +27,29 @@ const pages = {
     ],
   },
   account2: {
-    pageTitle: "サンプルアカウント｜お知らせ",
-    middleText: `ここは2つ目のアカウント専用の文章です。
+    pageTitle: "篠原さん｜お知らせ",
+    middleText: `渋谷の某ジムのトレーナー篠原さん。
 
-アカウントごとに、この長文・上下の画像・タイトル・リンク先を別々に設定できます。`,
+中身もめちゃくちゃ明るくて、一緒に筋トレするには最高のお姉さんです。
+
+筋トレしてる女性って本当に〇欲強くて、おっおっというオホ声がたまらないです...
+
+【本編完全顔出し】
+※公開から限定72時間のみ割引！`,
     links: [
       {
-        title: "上の画像リンク",
-        eyebrow: "PROFILE",
-        url: "https://mfco.link/r/Yi56wEEzbCgwXtpTesKP9Cso",
-        image: "",
+        title: "渋谷のトレーナー篠原さんとデート！",
+        eyebrow: "【本編完全顔出し】",
+        url: "https://mfco.link/r/XufywqejorG7gCEJ1aR1YCbg",
+        image: "images/shinohara-top.jpg",
         imageLabel: "IMAGE",
         external: true,
       },
       {
-        title: "下の画像リンク",
-        eyebrow: "SPECIAL LINK",
-        url: "https://mfco.link/r/Yi56wEEzbCgwXtpTesKP9Cso",
-        image: "",
+        title: "渋谷のトレーナー篠原さんとデート！",
+        eyebrow: "【本編完全顔出し】",
+        url: "https://mfco.link/r/XufywqejorG7gCEJ1aR1YCbg",
+        image: "images/shinohara-bottom.jpg",
         imageLabel: "IMAGE",
         external: true,
       },
