@@ -42,7 +42,7 @@ const pages = {
         eyebrow: "【本編完全顔出し】",
         url: "https://mfco.link/r/XufywqejorG7gCEJ1aR1YCbg",
         image: "images/shinohara-top.jpg",
-        imageLabel: "IMAGE",
+        imageLabel: "",
         external: true,
       },
       {
@@ -50,7 +50,7 @@ const pages = {
         eyebrow: "【本編完全顔出し】",
         url: "https://mfco.link/r/XufywqejorG7gCEJ1aR1YCbg",
         image: "images/shinohara-bottom.jpg",
-        imageLabel: "IMAGE",
+        imageLabel: "",
         external: true,
       },
     ],
@@ -102,7 +102,11 @@ function renderLinks() {
     link.setAttribute("aria-label", `${item.title}を外部ブラウザで開く`);
     eyebrow.textContent = item.eyebrow;
     title.textContent = item.title;
-    imageLabel.textContent = item.imageLabel || "IMAGE";
+    if (item.imageLabel) {
+      imageLabel.textContent = item.imageLabel;
+    } else {
+      imageLabel.remove();
+    }
 
     if (item.image) {
       photo.src = item.image;
