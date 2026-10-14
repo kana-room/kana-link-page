@@ -40,7 +40,7 @@ const pages = {
       {
         title: "渋谷のトレーナー篠原さんとデート！",
         eyebrow: "【本編完全顔出し】",
-        url: "https://mfco.link/r/XufywqejorG7gCEJ1aR1YCbg",
+        url: "https://mfco.link/r/WVep1qSfmB6YzFsFAvRmZDko",
         image: "images/shinohara-top.jpg",
         imageLabel: "",
         external: true,
@@ -48,7 +48,7 @@ const pages = {
       {
         title: "渋谷のトレーナー篠原さんとデート！",
         eyebrow: "【本編完全顔出し】",
-        url: "https://mfco.link/r/XufywqejorG7gCEJ1aR1YCbg",
+        url: "https://mfco.link/r/WVep1qSfmB6YzFsFAvRmZDko",
         image: "images/shinohara-bottom.jpg",
         imageLabel: "",
         external: true,
