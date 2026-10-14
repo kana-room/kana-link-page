@@ -42,7 +42,7 @@ const pages = {
 さらに新規登録者限定で20%OFF
 クーポン配布中！
 
-👇`,
+👇👇👇`,
     links: [
       {
         title: "渋谷のトレーナー篠原さんとデート！",
@@ -155,7 +155,14 @@ function renderLinks() {
 function renderExtraContent() {
   if (page.afterText) {
     const textSection = document.querySelector("#after-text-card");
-    document.querySelector("#after-text").textContent = page.afterText;
+    const textElement = document.querySelector("#after-text");
+    const textLines = page.afterText.split("\n");
+    const arrowLine = textLines.pop();
+    const arrow = document.createElement("span");
+    arrow.className = "promo-text__arrow";
+    arrow.textContent = arrowLine;
+    textElement.textContent = `${textLines.join("\n")}\n`;
+    textElement.append(arrow);
     textSection.hidden = false;
   }
 

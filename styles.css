@@ -152,8 +152,10 @@ button { font: inherit; }
 .long-text p { margin: 0; color: #dbc5c1; font-size: 14px; line-height: 1.95; white-space: pre-wrap; }
 .promo-text { text-align: center; }
 .promo-text p { color: #fff5ef; font-size: clamp(17px, 4.8vw, 20px); font-weight: 800; line-height: 1.75; }
+.promo-text__arrow { display: inline-block; margin-top: 4px; font-size: 1.35em; animation: arrow-bounce 900ms ease-in-out infinite alternate; }
+@keyframes arrow-bounce { from { transform: translateY(-2px); } to { transform: translateY(7px); } }
 .plain-fallback-link { display: inline-block; margin: 11px 4px 0; color: #e7b490; font-size: 13px; font-weight: 750; text-decoration: underline; text-underline-offset: 4px; }
 .button:focus-visible, .media-link:focus-visible, .plain-fallback-link:focus-visible { outline: 3px solid rgba(231, 180, 144, 0.5); outline-offset: 3px; }
 
 @media (max-width: 360px) { .page-shell { padding-right: 12px; padding-left: 12px; } .age-card { padding-right: 21px; padding-left: 21px; } }
-@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; } .promo-text__arrow { animation: none; } }
