@@ -36,12 +36,19 @@ const pages = {
 
 【本編完全顔出し】
 ※公開から限定72時間のみ割引！`,
+    afterText: `1本57円で過去の素人作品が
+70作品以上見放題！
+
+さらに新規登録者限定で20%OFF
+クーポン配布中！
+
+👇`,
     links: [
       {
         title: "渋谷のトレーナー篠原さんとデート！",
         eyebrow: "【本編完全顔出し】",
         url: "https://mfco.link/r/WVep1qSfmB6YzFsFAvRmZDko",
-        image: "images/shinohara-top.jpg",
+        image: "images/shinohara-feature.webp",
         imageLabel: "",
         external: true,
       },
@@ -54,6 +61,15 @@ const pages = {
         external: true,
       },
     ],
+    extraLink: {
+      title: "70作品以上見放題！",
+      eyebrow: "",
+      url: "https://mfco.link/r/WVep1qSfmB6YzFsFAvRmZDko",
+      image: "images/shinohara-gallery.webp",
+      imageLabel: "",
+      external: true,
+      hideCaption: true,
+    },
   },
 };
 
@@ -85,45 +101,69 @@ function getExternalBrowserUrl(finalUrl) {
   return finalUrl;
 }
 
-function renderLinks() {
+function createMediaLink(item, showFallback = false) {
   const template = document.querySelector("#media-link-template");
+  const fragment = template.content.cloneNode(true);
+  const link = fragment.querySelector(".media-link");
+  const art = fragment.querySelector(".media-link__art");
+  const photo = fragment.querySelector(".media-link__photo");
+  const imageLabel = fragment.querySelector(".media-link__image-label");
+  const eyebrow = fragment.querySelector(".media-link__caption-eyebrow");
+  const title = fragment.querySelector(".media-link__title");
+  const fallbackLink = fragment.querySelector(".plain-fallback-link");
+
+  link.href = item.external ? getExternalBrowserUrl(item.url) : item.url;
+  link.setAttribute("aria-label", `${item.title}を外部ブラウザで開く`);
+  eyebrow.textContent = item.eyebrow;
+  title.textContent = item.title;
+
+  if (item.imageLabel) {
+    imageLabel.textContent = item.imageLabel;
+  } else {
+    imageLabel.remove();
+  }
+
+  if (item.image) {
+    photo.src = item.image;
+    photo.hidden = false;
+    art.classList.add("has-image");
+  }
+
+  if (item.hideCaption) {
+    link.classList.add("media-link--image-only");
+  }
+
+  if (showFallback) {
+    fallbackLink.href = item.url;
+    fallbackLink.setAttribute("aria-label", `${item.title}を直接開く`);
+  } else {
+    fallbackLink.remove();
+  }
+
+  return fragment;
+}
+
+function renderLinks() {
 
   links.forEach((item, index) => {
-    const fragment = template.content.cloneNode(true);
-    const link = fragment.querySelector(".media-link");
-    const art = fragment.querySelector(".media-link__art");
-    const photo = fragment.querySelector(".media-link__photo");
-    const imageLabel = fragment.querySelector(".media-link__image-label");
-    const eyebrow = fragment.querySelector(".media-link__caption-eyebrow");
-    const title = fragment.querySelector(".media-link__title");
-    const fallbackLink = fragment.querySelector(".plain-fallback-link");
-
-    link.href = item.external ? getExternalBrowserUrl(item.url) : item.url;
-    link.setAttribute("aria-label", `${item.title}を外部ブラウザで開く`);
-    eyebrow.textContent = item.eyebrow;
-    title.textContent = item.title;
-    if (item.imageLabel) {
-      imageLabel.textContent = item.imageLabel;
-    } else {
-      imageLabel.remove();
-    }
-
-    if (item.image) {
-      photo.src = item.image;
-      photo.hidden = false;
-      art.classList.add("has-image");
-    }
-    // 画像リンクは外部ブラウザ用。下側だけ予備テキストで最終URLを直接開く。
-    if (index === 0) {
-      fallbackLink.remove();
-    } else {
-      fallbackLink.href = item.url;
-      fallbackLink.setAttribute("aria-label", `${item.title}を直接開く`);
-    }
-
     const container = document.querySelector(index === 0 ? "#top-media-link" : "#bottom-media-link");
-    container.append(fragment);
+    // 画像リンクは外部ブラウザ用。下側だけ予備テキストで最終URLを直接開く。
+    container.append(createMediaLink(item, index !== 0));
   });
+}
+
+function renderExtraContent() {
+  if (page.afterText) {
+    const textSection = document.querySelector("#after-text-card");
+    document.querySelector("#after-text").textContent = page.afterText;
+    textSection.hidden = false;
+  }
+
+  if (page.extraLink) {
+    const container = document.querySelector("#extra-media-link");
+    container.append(createMediaLink(page.extraLink));
+    container.hidden = false;
+  }
 }
 
 function setupAgeGate() {
@@ -149,4 +189,5 @@ function setupAgeGate() {
 document.title = page.pageTitle;
 renderLinks();
 document.querySelector("#middle-text").textContent = page.middleText;
+renderExtraContent();
 setupAgeGate();
