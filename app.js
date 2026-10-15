@@ -47,7 +47,7 @@ const pages = {
       {
         title: "渋谷のトレーナー篠原さんとデート！",
         eyebrow: "【本編完全顔出し】",
-        url: "https://mfco.link/r/WVep1qSfmB6YzFsFAvRmZDko",
+        url: "https://mfco.link/r/K8Bs6AfFyZB59EoA9iuFNTpv",
         image: "images/shinohara-feature.webp",
         imageLabel: "",
         external: true,
@@ -55,7 +55,7 @@ const pages = {
       {
         title: "渋谷のトレーナー篠原さんとデート！",
         eyebrow: "【本編完全顔出し】",
-        url: "https://mfco.link/r/WVep1qSfmB6YzFsFAvRmZDko",
+        url: "https://mfco.link/r/K8Bs6AfFyZB59EoA9iuFNTpv",
         image: "images/shinohara-bottom.jpg",
         imageLabel: "",
         external: true,
@@ -64,7 +64,7 @@ const pages = {
     extraLink: {
       title: "70作品以上見放題！",
       eyebrow: "",
-      url: "https://mfco.link/r/WVep1qSfmB6YzFsFAvRmZDko",
+      url: "https://mfco.link/r/JHGXaPhHDf5hMtxtcyjwD3JN",
       image: "images/shinohara-gallery.webp",
       imageLabel: "",
       external: true,
