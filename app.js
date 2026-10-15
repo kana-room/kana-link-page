@@ -69,8 +69,8 @@ const pages = {
     extraLink: {
       title: "70作品以上見放題！",
       eyebrow: "",
-      url: "https://mfco.link/r/JHGXaPhHDf5hMtxtcyjwD3JN",
-      image: "images/shinohara-gallery.webp",
+      url: "https://mfco.link/r/K8Bs6AfFyZB59EoA9iuFNTpv",
+      image: "images/shinohara-gallery-new.webp",
       imageLabel: "",
       external: true,
       hideCaption: true,
