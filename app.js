@@ -28,20 +28,24 @@ const pages = {
   },
   account2: {
     pageTitle: "篠原さん｜お知らせ",
-    middleText: `渋谷の某ジムのトレーナー篠原さん。
+    middleText: `まさかの、インスタでよく見てた渋谷のトレーナー篠原さんが素人物に出演してました💦
 
-中身もめちゃくちゃ明るくて、一緒に筋トレするには最高のお姉さんです。
+中身もめちゃくちゃ明るくて、一緒に筋トレするには最高のお姉さんで、いつか通いたいなと思ってたんですが。
 
-筋トレしてる女性って本当に〇欲強くて、おっおっというオホ声がたまらないです...
+ついつい1時間弱ある本編を見てしまったのですが、筋トレしてる女性って本当に〇欲強くて、おっおっというオホ声が、こんな声出すんだと、正直たまりませんでした。
 
 【本編完全顔出し】
-※公開から限定72時間のみ割引！`,
+※本編はこちら👇`,
+    afterText: `1本66円で過去の素人作品が
+70作品以上見放題！
+👇👇👇`,
     links: [
       {
         title: "渋谷のトレーナー篠原さんとデート！",
         eyebrow: "【本編完全顔出し】",
         url: "https://mfco.link/r/K8Bs6AfFyZB59EoA9iuFNTpv",
         image: "images/shinohara-feature.webp",
+        video: "videos/shinohara-top.mp4",
         imageLabel: "",
         external: true,
       },
@@ -54,6 +58,15 @@ const pages = {
         external: true,
       },
     ],
+    extraLink: {
+      title: "70作品以上見放題！",
+      eyebrow: "",
+      url: "https://mfco.link/r/K8Bs6AfFyZB59EoA9iuFNTpv",
+      image: "images/shinohara-gallery-new.webp",
+      imageLabel: "",
+      external: true,
+      hideCaption: true,
+    },
   },
 };
 
@@ -91,6 +104,7 @@ function createMediaLink(item, showFallback = false) {
   const link = fragment.querySelector(".media-link");
   const art = fragment.querySelector(".media-link__art");
   const photo = fragment.querySelector(".media-link__photo");
+  const video = fragment.querySelector(".media-link__video");
   const imageLabel = fragment.querySelector(".media-link__image-label");
   const eyebrow = fragment.querySelector(".media-link__caption-eyebrow");
   const title = fragment.querySelector(".media-link__title");
@@ -107,7 +121,14 @@ function createMediaLink(item, showFallback = false) {
     imageLabel.remove();
   }
 
-  if (item.image) {
+  if (item.video) {
+    video.src = item.video;
+    if (item.image) video.poster = item.image;
+    video.muted = true;
+    video.defaultMuted = true;
+    video.hidden = false;
+    art.classList.add("has-image");
+  } else if (item.image) {
     photo.src = item.image;
     photo.hidden = false;
     art.classList.add("has-image");
@@ -206,6 +227,7 @@ function setupAgeGate() {
   confirmButton.addEventListener("click", () => {
     main.hidden = false;
     main.setAttribute("aria-hidden", "false");
+    main.querySelectorAll("video").forEach((video) => video.play().catch(() => {}));
     requestAnimationFrame(() => main.classList.add("is-visible"));
     gate.classList.add("is-leaving");
     window.setTimeout(() => { gate.hidden = true; }, 270);
