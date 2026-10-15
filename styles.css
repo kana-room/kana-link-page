@@ -154,6 +154,15 @@ button { font: inherit; }
 .promo-text p { color: #fff5ef; font-size: clamp(17px, 4.8vw, 20px); font-weight: 800; line-height: 1.75; }
 .promo-text__arrow { display: inline-block; margin-top: 4px; font-size: 1.35em; animation: arrow-bounce 900ms ease-in-out infinite alternate; }
 @keyframes arrow-bounce { from { transform: translateY(-2px); } to { transform: translateY(7px); } }
+.coupon-panel { display: grid; gap: 10px; margin-top: 22px; }
+.promo-text .coupon-panel__expiry { margin: 0; padding: 9px 13px; border: 1px solid rgba(255, 143, 157, 0.65); border-radius: 999px; color: #fff; background: linear-gradient(135deg, #e52d4f, #99142e); box-shadow: 0 8px 20px rgba(184, 19, 53, 0.32); font-size: 15px; font-weight: 850; letter-spacing: 0.03em; line-height: 1.35; }
+.coupon-copy { display: grid; width: 100%; padding: 14px 16px 13px; border: 2px solid #e43655; border-radius: 16px; color: #700e24; background: linear-gradient(145deg, #fff8f8, #ffdfe4); box-shadow: 0 10px 24px rgba(197, 25, 57, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.9); cursor: pointer; transition: transform 130ms ease, box-shadow 130ms ease, background 130ms ease; }
+.coupon-copy:active { transform: translateY(2px) scale(0.992); box-shadow: 0 5px 12px rgba(197, 25, 57, 0.28); }
+.coupon-copy.is-copied { color: #fff; background: linear-gradient(135deg, #e52d4f, #99142e); }
+.coupon-copy__label { font-size: 13px; font-weight: 900; letter-spacing: 0.05em; }
+.coupon-copy__code { margin: 2px 0; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 32px; font-weight: 900; letter-spacing: 0.12em; line-height: 1.2; }
+.coupon-copy__action { font-size: 11px; font-weight: 800; opacity: 0.76; }
+.promo-text .coupon-panel__status { min-height: 22px; margin: 0; color: #ff9bad; font-size: 13px; font-weight: 850; line-height: 1.5; }
 .plain-fallback-link { display: inline-block; margin: 11px 4px 0; color: #e7b490; font-size: 13px; font-weight: 750; text-decoration: underline; text-underline-offset: 4px; }
 .button:focus-visible, .media-link:focus-visible, .plain-fallback-link:focus-visible { outline: 3px solid rgba(231, 180, 144, 0.5); outline-offset: 3px; }
 

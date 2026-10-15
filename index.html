@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#18080d" />
     <title>かな｜お知らせ</title>
-    <link rel="stylesheet" href="styles.css?v=20261014-arrows" />
+    <link rel="stylesheet" href="styles.css?v=20261016-coupon" />
   </head>
   <body>
     <section id="age-gate" class="age-gate" aria-labelledby="age-title">
@@ -35,6 +35,15 @@
 
       <section id="after-text-card" class="long-text promo-text" aria-label="キャンペーンのお知らせ" hidden>
         <p id="after-text"></p>
+        <div id="coupon-panel" class="coupon-panel" hidden>
+          <p id="coupon-expiry" class="coupon-panel__expiry"></p>
+          <button id="copy-coupon" class="coupon-copy" type="button" aria-describedby="coupon-status">
+            <span id="coupon-label" class="coupon-copy__label"></span>
+            <span id="coupon-code" class="coupon-copy__code"></span>
+            <span class="coupon-copy__action">タップでコピー</span>
+          </button>
+          <p id="coupon-status" class="coupon-panel__status" aria-live="polite"></p>
+        </div>
       </section>
 
       <div id="extra-media-link" class="media-links" aria-label="追加のご案内リンク" hidden></div>
@@ -61,6 +70,6 @@
       </article>
     </template>
 
-    <script src="app.js?v=20261016-links"></script>
+    <script src="app.js?v=20261016-coupon"></script>
   </body>
 </html>

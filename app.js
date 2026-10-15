@@ -43,6 +43,11 @@ const pages = {
 クーポン配布中！
 
 👇👇👇`,
+    coupon: {
+      expires: "10/12(月曜) 23:59まで",
+      label: "20%OFFクーポン",
+      code: "MF55",
+    },
     links: [
       {
         title: "渋谷のトレーナー篠原さんとデート！",
@@ -170,6 +175,45 @@ function renderExtraContent() {
     const container = document.querySelector("#extra-media-link");
     container.append(createMediaLink(page.extraLink));
     container.hidden = false;
+  }
+
+  if (page.coupon) {
+    const couponPanel = document.querySelector("#coupon-panel");
+    const copyButton = document.querySelector("#copy-coupon");
+    const status = document.querySelector("#coupon-status");
+
+    document.querySelector("#coupon-expiry").textContent = page.coupon.expires;
+    document.querySelector("#coupon-label").textContent = page.coupon.label;
+    document.querySelector("#coupon-code").textContent = page.coupon.code;
+    couponPanel.hidden = false;
+
+    copyButton.addEventListener("click", async () => {
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(page.coupon.code);
+        } else {
+          const textarea = document.createElement("textarea");
+          textarea.value = page.coupon.code;
+          textarea.setAttribute("readonly", "");
+          textarea.style.position = "fixed";
+          textarea.style.opacity = "0";
+          document.body.append(textarea);
+          textarea.select();
+          const copied = document.execCommand("copy");
+          textarea.remove();
+          if (!copied) throw new Error("コピーに失敗しました");
+        }
+
+        status.textContent = "コピーしました。";
+        copyButton.classList.add("is-copied");
+        window.setTimeout(() => {
+          status.textContent = "";
+          copyButton.classList.remove("is-copied");
+        }, 2000);
+      } catch {
+        status.textContent = "コピーできませんでした。長押ししてコピーしてください。";
+      }
+    });
   }
 }
 
