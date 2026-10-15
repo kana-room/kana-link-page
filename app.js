@@ -36,18 +36,6 @@ const pages = {
 
 【本編完全顔出し】
 ※公開から限定72時間のみ割引！`,
-    afterText: `1本57円で過去の素人作品が
-70作品以上見放題！
-
-さらに新規登録者限定で20%OFF
-クーポン配布中！
-
-👇👇👇`,
-    coupon: {
-      expires: "10/12(月曜) 23:59まで",
-      label: "20%OFFクーポン",
-      code: "MF55",
-    },
     links: [
       {
         title: "渋谷のトレーナー篠原さんとデート！",
@@ -66,15 +54,6 @@ const pages = {
         external: true,
       },
     ],
-    extraLink: {
-      title: "70作品以上見放題！",
-      eyebrow: "",
-      url: "https://mfco.link/r/K8Bs6AfFyZB59EoA9iuFNTpv",
-      image: "images/shinohara-gallery-new.webp",
-      imageLabel: "",
-      external: true,
-      hideCaption: true,
-    },
   },
 };
 
