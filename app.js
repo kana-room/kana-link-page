@@ -70,12 +70,14 @@ const pages = {
   },
   aika: {
     pageTitle: "AIKAさん｜お知らせ",
-    middleText: `男ならこの名前を知らない人はいないと思います、AIKAさんです。
-烈の父もファンというレジェンド、ついに会えました。
-気強そうなイメージでしたがめちゃくちゃ愛のある人で、
-一緒に一日過ごしてずっとニコニコしてるし話も弾むし大好きになりました。
-AIKAさんと遊ぶって言ったら仲良しカメラマンが飛んできて、
-今回初の他撮りもあります！`,
+    middleText: `男ならこの名前を知らない人はいないと思います、AIKAさんです！
+
+気強そうなイメージでしたが、おっおっっという喘ぎ声が可愛くてギャップがやばいです。。。
+
+一緒に一日過ごしてずっとニコニコしてるし話も弾むし大好きになりました。`,
+    afterText: `1本66円で70本以上の
+過去作品見放題！
+👇 👇 👇`,
     links: [
       {
         title: "【🔥レジェンドギャル・AIKAさん🔥】",
@@ -98,6 +100,15 @@ AIKAさんと遊ぶって言ったら仲良しカメラマンが飛んできて�
         external: true,
       },
     ],
+    extraLink: {
+      title: "AIKAさんの過去作品を見る",
+      eyebrow: "",
+      url: "https://mfco.link/r/hvwwsNLayQgpKitm3WFPqAEP",
+      image: "images/aika-gallery.webp",
+      imageLabel: "",
+      external: true,
+      hideCaption: true,
+    },
   },
 };
 
