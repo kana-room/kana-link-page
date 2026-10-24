@@ -68,6 +68,35 @@ const pages = {
       hideCaption: true,
     },
   },
+  aika: {
+    pageTitle: "AIKAさん｜お知らせ",
+    middleText: `男ならこの名前を知らない人はいないと思います、AIKAさんです。
+烈の父もファンというレジェンド、ついに会えました。
+気強そうなイメージでしたがめちゃくちゃ愛のある人で、
+一緒に一日過ごしてずっとニコニコしてるし話も弾むし大好きになりました。
+AIKAさんと遊ぶって言ったら仲良しカメラマンが飛んできて、
+今回初の他撮りもあります！`,
+    links: [
+      {
+        title: "AIKAさんの本編を見る",
+        eyebrow: "MOVIE",
+        url: "https://mfco.link/r/hvwwsNLayQgpKitm3WFPqAEP",
+        image: "",
+        video: "videos/aika-top.mp4",
+        imageLabel: "",
+        external: true,
+      },
+      {
+        title: "AIKAさんの他撮り映像を見る",
+        eyebrow: "SPECIAL MOVIE",
+        url: "https://mfco.link/r/hvwwsNLayQgpKitm3WFPqAEP",
+        image: "",
+        video: "videos/aika-bottom.mp4",
+        imageLabel: "",
+        external: true,
+      },
+    ],
+  },
 };
 
 const requestedAccount = new URLSearchParams(window.location.search).get("account") || "kana";
