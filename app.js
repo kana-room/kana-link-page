@@ -78,8 +78,9 @@ AIKAさんと遊ぶって言ったら仲良しカメラマンが飛んできて�
 今回初の他撮りもあります！`,
     links: [
       {
-        title: "AIKAさんの本編を見る",
-        eyebrow: "MOVIE",
+        title: "【🔥レジェンドギャル・AIKAさん🔥】",
+        eyebrow: "",
+        cta: "タップで本編を見る◀︎",
         url: "https://mfco.link/r/hvwwsNLayQgpKitm3WFPqAEP",
         image: "",
         video: "videos/aika-top.mp4",
@@ -87,8 +88,9 @@ AIKAさんと遊ぶって言ったら仲良しカメラマンが飛んできて�
         external: true,
       },
       {
-        title: "AIKAさんの他撮り映像を見る",
-        eyebrow: "SPECIAL MOVIE",
+        title: "【🔥AIKAさんについに会えました🔥】",
+        eyebrow: "",
+        cta: "タップで本編を見る◀︎",
         url: "https://mfco.link/r/hvwwsNLayQgpKitm3WFPqAEP",
         image: "",
         video: "videos/aika-bottom.mp4",
@@ -137,12 +139,18 @@ function createMediaLink(item, showFallback = false) {
   const imageLabel = fragment.querySelector(".media-link__image-label");
   const eyebrow = fragment.querySelector(".media-link__caption-eyebrow");
   const title = fragment.querySelector(".media-link__title");
+  const cta = fragment.querySelector(".media-link__cta");
   const fallbackLink = fragment.querySelector(".plain-fallback-link");
 
   link.href = item.external ? getExternalBrowserUrl(item.url) : item.url;
   link.setAttribute("aria-label", `${item.title}を外部ブラウザで開く`);
-  eyebrow.textContent = item.eyebrow;
+  if (item.eyebrow) {
+    eyebrow.textContent = item.eyebrow;
+  } else {
+    eyebrow.remove();
+  }
   title.textContent = item.title;
+  cta.textContent = item.cta || "タップして開く →";
 
   if (item.imageLabel) {
     imageLabel.textContent = item.imageLabel;
