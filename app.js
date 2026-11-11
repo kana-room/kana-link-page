@@ -110,6 +110,37 @@ const pages = {
       hideCaption: true,
     },
   },
+  hanataba: {
+    pageTitle: "両手に花束｜お知らせ",
+    middleText: `顔がタイプすぎる2人に3Pしたいって聞いたら2人が仲良しで、夢が叶いました。
+「両手に花束」、この言葉しか思いつかなかったです。
+
+プライベートでも遊んでる2人と3人でハメ撮りできる日が来るとは思ってなくて。
+
+夜集合してお泊まり、朝起きてもまたセックスして、
+生ハメ何度も中出し、人生で一番中出しした日になりました笑
+
+この2人の顔が可愛すぎて無限に勃ちました。幸せすぎてしばらく引きずってます、、、、、、、`,
+    links: [
+      {
+        title: "【両手に花束】大好きな2人と夢の3P",
+        eyebrow: "",
+        url: "https://mfco.link/r/hVktv5jxWknwug4b7Tihp5eo",
+        image: "",
+        video: "videos/hanataba-top.mp4",
+        imageLabel: "",
+        external: true,
+      },
+      {
+        title: "【両手に花束】大好きな2人と夢の3P",
+        eyebrow: "",
+        url: "https://mfco.link/r/hVktv5jxWknwug4b7Tihp5eo",
+        image: "images/hanataba-gallery.webp",
+        imageLabel: "",
+        external: true,
+      },
+    ],
+  },
 };
 
 const requestedAccount = new URLSearchParams(window.location.search).get("account") || "kana";
