@@ -142,6 +142,7 @@ button { font: inherit; }
 .media-link__caption { position: absolute; z-index: 3; right: 20px; bottom: 19px; left: 20px; display: grid; gap: 3px; }
 .media-link__caption-eyebrow { color: #e7b490; font-size: 10px; font-weight: 800; letter-spacing: 0.16em; }
 .media-link__title { color: #fff7f2; font-family: Georgia, "Times New Roman", serif; font-size: clamp(19px, 5.4vw, 22px); font-weight: 700; letter-spacing: 0.02em; line-height: 1.35; }
+.media-link__aligned-text { display: inline-block; font-family: Arial, "Helvetica Neue", sans-serif; font-variant-numeric: lining-nums; font-feature-settings: "lnum" 1; line-height: 1; vertical-align: baseline; }
 .media-link__cta { margin-top: 4px; color: #d9b8b2; font-size: 11px; font-weight: 700; }
 .long-text {
   margin: 23px 4px;

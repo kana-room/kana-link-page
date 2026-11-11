@@ -194,7 +194,16 @@ function createMediaLink(item, showFallback = false) {
   }
   item.title.split("\n").forEach((line, index) => {
     if (index > 0) title.append(document.createElement("br"));
-    title.append(document.createTextNode(line));
+    line.split(/(3P)/g).forEach((part) => {
+      if (part === "3P") {
+        const alignedText = document.createElement("span");
+        alignedText.className = "media-link__aligned-text";
+        alignedText.textContent = part;
+        title.append(alignedText);
+      } else {
+        title.append(document.createTextNode(part));
+      }
+    });
   });
   cta.textContent = item.cta || "タップして開く →";
 
