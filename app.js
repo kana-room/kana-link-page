@@ -123,7 +123,8 @@ const pages = {
 この2人の顔が可愛すぎて無限に勃ちました。幸せすぎてしばらく引きずってます、、、、、、、`,
     links: [
       {
-        title: "【両手に花束】大好きな2人と夢の3P",
+        title: `【両手に花束】
+大好きな2人と夢の3P`,
         eyebrow: "",
         url: "https://mfco.link/r/hVktv5jxWknwug4b7Tihp5eo",
         image: "",
@@ -191,7 +192,10 @@ function createMediaLink(item, showFallback = false) {
   } else {
     eyebrow.remove();
   }
-  title.textContent = item.title;
+  item.title.split("\n").forEach((line, index) => {
+    if (index > 0) title.append(document.createElement("br"));
+    title.append(document.createTextNode(line));
+  });
   cta.textContent = item.cta || "タップして開く →";
 
   if (item.imageLabel) {
