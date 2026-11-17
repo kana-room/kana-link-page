@@ -142,6 +142,32 @@ const pages = {
       },
     ],
   },
+  college19: {
+    pageTitle: "現役女子大生19歳｜お知らせ",
+    middleText: `19歳の現役女子大生が奇跡のAV出演
+
+うぶで恥ずかしがってる感じが
+ほんっとうにエロい...💦`,
+    links: [
+      {
+        title: "19歳の現役女子大生が奇跡のAV出演",
+        eyebrow: "",
+        url: "https://mfco.link/r/BzjBmhaNseiw3natjAL24E4L",
+        image: "",
+        video: "videos/college19-top.mp4",
+        imageLabel: "",
+        external: true,
+      },
+      {
+        title: "19歳の現役女子大生が奇跡のAV出演",
+        eyebrow: "",
+        url: "https://mfco.link/r/BzjBmhaNseiw3natjAL24E4L",
+        image: "images/college19-gallery.webp",
+        imageLabel: "",
+        external: true,
+      },
+    ],
+  },
 };
 
 const requestedAccount = new URLSearchParams(window.location.search).get("account") || "kana";
