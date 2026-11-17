@@ -150,7 +150,8 @@ const pages = {
 ほんっとうにエロい...💦`,
     links: [
       {
-        title: "19歳の現役女子大生が奇跡のAV出演",
+        title: `19歳の現役女子大生が
+奇跡のAV出演`,
         eyebrow: "",
         url: "https://mfco.link/r/BzjBmhaNseiw3natjAL24E4L",
         image: "",
@@ -159,7 +160,8 @@ const pages = {
         external: true,
       },
       {
-        title: "19歳の現役女子大生が奇跡のAV出演",
+        title: `19歳の現役女子大生が
+奇跡のAV出演`,
         eyebrow: "",
         url: "https://mfco.link/r/BzjBmhaNseiw3natjAL24E4L",
         image: "images/college19-gallery.webp",
